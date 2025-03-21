@@ -1,29 +1,35 @@
 # C-Cpp-cmake-with-ninja-template
 Simple C/C++ cmake with ninja project template to reuse for new project
 
-```
-mkdir build && cd build
+## To run the code
+
+```bash
+cmake -S . --preset=debug -B build
 ```
 
-```
-cmake .. --preset=debug
+or
+
+```bash
+cmake -S . --preset=release -B build
 ```
 
-or 
+then run
 
-```
-cmake .. --preset=release
+```bash
+cmake --build build
 ```
 
-```
-ninja clean && ninja
+or
+
+```bash
+cd build && ninja clean && ninja
 ```
 
 and executable will exist in the `build/` directory.
 
 to generate compile_commands.json file for clangd LSP, use
 
-```
+```bash
 cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 .. --preset=${PRESET_NAME}
 
 cd ${ROOT_DIRECTORY}
