@@ -1,6 +1,9 @@
 ### CMake ###
 cmake_minimum_required(VERSION 3.15...3.30)
 
+### Compile commands generation ###
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 ### Compiler settings ###
 set(CMAKE_C_COMPILER clang)
 set(CMAKE_CXX_COMPILER clang++) 
@@ -31,6 +34,3 @@ target_include_directories(${PROJECT_NAME}
     PRIVATE
         ${PROJECT_SOURCE_DIR}/include
 )
-
-### Compile commands generation ###
-set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
